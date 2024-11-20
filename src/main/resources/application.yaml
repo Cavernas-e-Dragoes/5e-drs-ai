@@ -1,0 +1,25 @@
+spring:
+  data:
+    mongodb:
+      database: ${MONGODB_DATABASE:local}
+      uri: ${MONGODB_URI:mongodb://localhost:27017}
+  banner:
+    location: classpath:banner.txt
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.security.web.FilterChainProxy: DEBUG
+    com.github.bucket4j: DEBUG
+    com.ced: DEBUG
+
+cors:
+  allowed-origins:
+    - https://ced.discloud.app
+    - http://localhost:4200
+
+openai:
+  api-key: ${OPENAI_API_KEY:key}
